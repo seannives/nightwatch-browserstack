@@ -1,29 +1,33 @@
-# nightwatch-browserstack
-[Nightwatch](http://nightwatchjs.org/) Integration with BrowserStack.
+# sls nightwatch-browserstack
 
-![BrowserStack Logo](https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780)
-
-<img src ="http://nightwatchjs.org/img/logo-nightwatch.png" height = "110">
+[Original boilerplate](https://github.com/browserstack/nightwatch-browserstack)
 
 ## Setup
 * Clone the repo
 * Install dependencies `npm install`
-* Update `*.conf.js` files inside the `conf/` directory with your BrowserStack Username and Access Key(https://www.browserstack.com/accounts/settings)
+
+* Set things up to work locally:
+  * fly
+  * super
+
+* Set things up to work on Browserstack:
+  * Set your BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY env vars (I dropped mine in .bashrc).
+  * Update `*.conf.js` files inside the `conf/` directory with your BrowserStack Username and Access Key(https://www.browserstack.com/accounts/settings).  These can be found by going to https://www.browserstack.com/automate/nightwatch, logging in, and search on the page for 'browserstack.user'.
+
 
 ## Running your tests
-- To run a single test, run `npm run single`
-- To run parallel tests, run `npm run parallel`
-- To run local tests, run `npm run local`
+
+These commands will run all the tests under `tests/sls-react`.
+
+- To run tests with firefox (default) locally, run `npm run react_dev`
+- To run tests with firefox and chrome locally, run `npm run react_parallel_dev`
+- To run tests with chrome on a random OS on browserstack, run `npm run react_browserstack`
+- To run tests with chrome, firefox, safari, and ie on random OS's on browserstack, run `npm run react_browserstack_multi`
 
 ## Notes
 * You can view your test results on the [BrowserStack automate dashboard](https://www.browserstack.com/automate)
 * To test on a different set of browsers, check out our [platform configurator](https://www.browserstack.com/automate/node#setting-os-and-browser)
-* You can export the environment variables for the Username and Access Key of your BrowserStack account
-  
-  ```
-  export BROWSERSTACK_USERNAME=<browserstack-username> &&
-  export BROWSERSTACK_ACCESS_KEY=<browserstack-access-key>
-  ```
+
   
 ## Additional Resources
 * [Documentation for writing automate test scripts in Node](https://www.browserstack.com/automate/node)

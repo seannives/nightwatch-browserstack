@@ -19,6 +19,7 @@ nightwatch_config = {
         'browserstack.debug': true,
         'browser': 'chrome',
         'project': 'sls'
+        // TODO: 'build' would be a cool thing to add here
       }
     }
   },

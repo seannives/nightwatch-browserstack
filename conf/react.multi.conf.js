@@ -16,6 +16,7 @@ nightwatch_config = {
     'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
     'browserstack.debug': true,
     'project': 'sls'
+    // TODO: 'build' would be a cool thing to add here
   },
 
   test_settings: {
