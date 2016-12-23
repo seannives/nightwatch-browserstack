@@ -7,17 +7,22 @@
 * Install dependencies `npm install`
 
 * Set things up to work locally:
-  * fly
-  * super
+  * Get Selenium from here: http://selenium-release.storage.googleapis.com/index.html
+  * Make a {repo}/bin directory and dump the `selenium-server-standalone-WHATEVERVERSION.jar` therein
+  * Get the chromedriver here: https://sites.google.com/a/chromium.org/chromedriver/downloads
+  * Get the firefox driver (called geckodriver) here: https://github.com/mozilla/geckodriver/releases
+  * Make a directory wherever you like, drop the two drivers therein, uncompress them, and add that directory to your path (on a mac, edit your `/etc/paths` file)
+  * Fire up selenium by running `java -jar selenium-server-sndalone-3.0.1.jar`
 
 * Set things up to work on Browserstack:
-  * Set your BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY env vars (I dropped mine in .bashrc).
-  * Update `*.conf.js` files inside the `conf/` directory with your BrowserStack Username and Access Key(https://www.browserstack.com/accounts/settings).  These can be found by going to https://www.browserstack.com/automate/nightwatch, logging in, and search on the page for 'browserstack.user'.
+  * Set your BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY env vars (I dropped mine in .bashrc).  These can be found by going to https://www.browserstack.com/automate/nightwatch, logging in, and search on the page for 'browserstack.user'.
+  * Understand that we have a limited number of minutes on browserstack so don't go nuts.  Otherwise, you're all set and can run the tests (see below).
 
 
 ## Running your tests
 
 These commands will run all the tests under `tests/sls-react`.
+As a reminder, if you're going to run the tests locally you have to have Selenium running too.
 
 - To run tests with firefox (default) locally, run `npm run react_dev`
 - To run tests with firefox and chrome locally, run `npm run react_parallel_dev`
