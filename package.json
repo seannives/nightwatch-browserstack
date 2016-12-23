@@ -4,6 +4,10 @@
   "readme": "Nightwatch Integration with [BrowserStack](https://www.browserstack.com)",
   "description": "Selenium examples for Nightwatch and BrowserStack Automate",
   "scripts": {
+    "react_dev": "./node_modules/.bin/nightwatch -c conf/react.dev.conf.js",
+    "react_parallel_dev": "./node_modules/.bin/nightwatch -c conf/react.dev.conf.js -e default,chrome",
+    "react_browserstack": "./node_modules/.bin/nightwatch -c conf/react.chrome.conf.js",
+    "react_browserstack_multi": "./node_modules/.bin/nightwatch -c conf/react.multi.conf.js -e chrome,firefox,safari,ie",    
     "test": "npm run single && npm run local && npm run parallel",
     "single": "./node_modules/.bin/nightwatch -c conf/single.conf.js",
     "local": "node scripts/local.runner.js -c conf/local.conf.js",

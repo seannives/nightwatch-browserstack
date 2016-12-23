@@ -1,5 +1,8 @@
+// This runs each file in the tests/sls-react directory against Browserstack.
+// Browserstack will pick a random chrome and random OS.
+
 nightwatch_config = {
-  src_folders : [ "tests/single" ],
+  src_folders : [ "tests/sls-react" ],
 
   selenium : {
     "start_process" : false,
@@ -15,11 +18,15 @@ nightwatch_config = {
         'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
         'browserstack.debug': true,
         'browser': 'chrome',
-        'project': 'test',
-        'build': 'version1'
+        'project': 'sls'
       }
     }
-  }
+  },
+
+  "test_workers": {
+    "enabled": true,
+    "workers": "auto"
+  }   
 };
 
 // Code to copy seleniumhost/port into test settings
