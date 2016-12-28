@@ -45,8 +45,8 @@ nightwatch_config = {
         "acceptSslCerts": true
       },
       // we can switch these to env vars if we want
-      "username": "sidelineswap",
-      "access_key": "tb12"
+      "username": "XXX",
+      "access_key": "XXX"
     },
 
     "chrome" : {
